@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sueldo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+  <div id='app'>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">  
+             
+
+                <h2>Datos del empleado</h2>
+                <h4>Nombre:</h4>
+                <input type="text"class="col-md-6" class="form control"placeholder="ingrese su nombre" v-model="nom">          
+                <h4>Horas mes:</h4>
+                <input type="number"class="col-md-6" class="form control"placeholder="Ingrese la cantidad de horas" v-model="hDi">
+                <h4>Horas extras:</h4>
+                <input type="number"class="col-md-6" class="form control"placeholder="Ingrese la cantidad de horas" v-model="hEx">
+                <br></br>
+                <div>
+                    <input type="button"value="Agregar"class="btn btn-success" v-on:click="procesarDatos">
+                </div>
+
+            </div>                   
+                <div class="col-md-12 ">
+                    <h3>Información</h3>  
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr class="bg-dark text-white">
+                            <td>Nombre</td>
+                            <td>Salario base</td>
+                            <td>Horas diarias / mes</td>
+                            <td>Horas extras / mes</td>
+                            <td>Impuesto</td>
+                            <td>Total</td>                                                               
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="objeto in arrayDatos" >
+                            <td v-text="objeto.nombre"></td>
+                            <td v-text="objeto.base"></td>
+                            <td v-text="objeto.hD"></td>
+                            <td v-text="objeto.hE"></td>
+                            <td v-text="objeto.impu"></td>
+                            <td v-text="objeto.total"></td>                                                     
+                        </tr>
+                    </tbody>
+                </table>      
+            </div>
+        </div>
+    </div>
+  </div> 
+</body>
+
+<script src="js/vue.js"></script> 
+<script src="js/sweetalert2.all.min.js"></script> 
+<script src="js/main.js"></script> 
+</html>
